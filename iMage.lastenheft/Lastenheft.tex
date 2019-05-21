@@ -16,41 +16,34 @@ bookmarks=true,%
 %
 % % Glossareinträge
 %
-\newglossaryentry{Dozent}
+\newglossaryentry{Nutzer}
 {
-	name=Dozent,
-	plural=Dozenten,
-	description={Leiter eines oder mehrerer Seminartypen},
+	name=Nutzer,
+	plural=Nutzer,
+	description={(Zahlende) Person welche die Dienste der Applikation nutzt},
 }
 
-\newglossaryentry{Kunde}
+\newglossaryentry{Abonnament}
 {
-	name=Kunde,
-	plural=Kunden,
-	description={(Zahlende) Teilnehmer einer oder mehrerer Seminarveranstaltung/en}
+	name=Abonnament,
+	plural=Abonnaments,
+	description={Zahlungssystem bei dem der Nutzer monatlich einen festen Betrag zahlt}
 }
 
-\newglossaryentry{Seminartyp}
+\newglossaryentry{HDR-Bild}
 {
-	name=Seminartyp,
-	plural=Seminartypen,
-	description={Typ einer Lehrveranstaltung (z.B. \enquote{Schöner Malen -- Anfängerkurs})}
+	name=HDR-Bild,
+	plural=HDR-Bilder,
+	description={(High Dynamic Range Image) Eine Rastergrafik, die große Helligkeitsunterschiede detailreich wiedergibt}
 }
 
-\newglossaryentry{Seminarveranstaltung}
+\newglossaryentry{Smartphone}
 {
-	name=Seminarveranstaltung,
-	plural=Seminarveranstaltungen,
-	description={Tatsächlich stattfindende Lehrveranstaltung (z.B. \enquote{Schöner Malen -- Anfängerkurs, Sommer 2014})}
+	name=Smartphone,
+	description={Mobiltelefon mit Touchscreen und zusätzlichen Funktionen wie GPS und der Möglichkeit, Apps darauf zu installieren}
 }
 
-\newglossaryentry{Computer}
-{
-	name=Computer,
-	description={Gerät zur Verarbeitung zur Daten, das die Daten einlesen, verarbeiten, speichern und ausgeben kann}
-}
-
-\title{SWT1: Lastenheftvorlage}
+\title{iMage Lastenheft}
 \author{Simon Himmel, 2210373}
 
 \begin{document}
@@ -105,40 +98,38 @@ Ein paar praktische Tipps (aus den PSE-Dokumenten von Prof. Snelting):
 % % Hier beginnt die Gliederung des Lastenhefts
 %
 \section{Zielbestimmung}
-Die Firma Teachware soll durch das Produkt in die Lage versetzt werden, die von ihr veranstalteten Seminare rechnerunterstützt zu verwalten.
+Der Benutzer soll durch das Produkt in die Lage versetzt werden, aus seinen eigenen Aufnahmen, gegen bezahlung, HDR-Bilder zu erstellen.
 
 \section{Produkteinsatz}
-Das Produkt dient zur Kunden- und Seminarverwaltung der Firma Teachware. Außerdem sollen verschiedene Anfragen beantwortet werden können.
+Das Produkt dient zur erstellung von HDR-Bildern gegen bezahlung. Außerdem sollen diese auch auf sozialen Netzwerken hochgeladen werden können.
 
-Zielgruppe: die Mitarbeiter der Firma Teachware.
+Zielgruppe: jeder Nutzer der Applikation.
 
-Plattform: PC mit Windows XP oder Nachfolger-Betriebssystem
+Plattform: Smartphones mit IOS oder Android Betriebssystem.
 
 \section{Funktionale Anforderungen}
 \begin{itemize}[nosep]
-\item[FA10] Ersterfassung, Änderung und Löschung von \glspl{Kunde} (Teilnehmer, Interessenten).
-\item[FA20] Benachrichtigung der Kunden (Anmeldebestätigung, Abmeldebestätigung, Änderungsmitteilungen, Rechnung, Werbung).
-\item[FA30] Ersterfassung, Änderung und Löschung von Seminarveranstaltungen und Seminartypen.
-\item[FA40] Ersterfassung, Änderung und Löschung von \glspl{Dozent} sowie Zuordnung zu \glspl{Seminarveranstaltung} und \glspl{Seminartyp}.
-\item[FA50] Ersterfassung, Änderung und Löschung von Seminarbuchungen.
-\item[FA60] Erstellung von Rechnungen.
-\item[FA70] Erstellung verschiedener Listen (Teilnehmerliste, Umsatzliste, Teilnehmerbescheinigungen).
-\item[FA80] Anfragen der folgenden Art sollen möglich sein:
-     Wann findet das nächste Seminar X statt? Welche Mitarbeiter der Firma Y haben das Seminar X besucht?
+\item[FA10] Ersterfassung, Änderung und Löschung von Nutzern (deren Konten).
+\item[FA20] Erstellen und Speichern eines HDR-Bildes aus einer Bilderreihe der größe 3.
+\item[FA30] Möglichkeit zwischen \gls{Abonnament} und Einzelbild-Preis zu wählen.
+\item[FA40] Übersicht über das Nutzerkonto und zuletzt erstellte \glspl{HDR-Bild}.
+\item[FA50] Alle Bilder sollen dauerhaft auf dem Pear-Corp-Zentralserver zur Analyse der Nutzererfahrung gespeichert werden.
+\item[FA60] Möglichkeit die \glspl{HDR-Bild} direkt auf sozialen Netzwerken hochzuladen.
+\item[FA70] Möglichkeit einer Vorschauansicht der bereits auf dem \gls{Smartphone} gespeicherten Bilder.
 \end{itemize}
 
 \section{Produktdaten}
 \begin{itemize}[nosep]
-\item[PD10] Es sind relevante Daten über die Kunden zu speichern.
-\item[PD20] Falls ein Kunde zu einer Firma gehört, dann sind relevante Daten über die Firma zu speichern.
-\item[PD30] Es sind relevante Daten über Seminarveranstaltungen, Seminartypen und Dozenten zu speichern.
-\item[PD40] Bucht ein Kunde eine Seminarveranstaltung, dann sind entsprechende Buchungsdaten zu speichern.
+\item[PD10] Es sind relevante Daten über die \gls{Nutzer} und deren Konto zu speichern.
+\item[PD20] Informationen darüber ob der Nutzer ein Abonnament besitzt.
+\item[PD30] Es sind Eingabe- als auch Ausgabebilder dauerhaft auf dem Pear-Corp-Zentralserver zu speichern.
 \end{itemize}
 
 \section{Nichtfunktionale Anforderungen}
 \begin{itemize}[nosep]
-\item[NF10] Die Funktion /FA80/ darf nicht länger als 15 Sekunden Interaktionszeit benötigen, alle anderen Reaktionszeiten müssen unter 2 Sekunden liegen.
-\item[NF20] Es müssen maximal 50.000 Teilnehmer und maximal 10.000 Seminare verwaltet werden können.
+\item[NF10] Die Funktion /FA20/ darf nicht länger als 7 Sekunden Interaktionszeit benötigen, alle anderen Reaktionszeiten müssen unter 2 Sekunden liegen.
+\item[NF20] Es sollen mindestens 1000 Nutzer gleichzeitig mit dem Server kommunizieren können.
+\item[NF30] Die Funktion /FA70/ soll in Echtzeit mindestens 100 Bilder auf einem Durchschnittsgerät anzeigen können.
 \end{itemize}
 
 \section{Systemmodelle}
@@ -156,17 +147,6 @@ Akteure: Kundensachbearbeiter, Seminarsachbearbeiter.
 Anwendungsfälle: Kundenverwaltung, Rechnungsstellung, Anfragebearbeitung, Dozentenverwaltung, Listenverwaltung, Seminarverwaltung.
 
 Textuelle Beschreibung: (folgt)
-
-
-
-%
-% % Automatisch generiertes Glossar (Latex zwei mal ausführen um Glossar anzuzeigen)
-%
-%\glsaddall % das sorgt dafür, dass alles Glossareinträge gedruckt werden, nicht nur die verwendeten. Das sollte nicht nötig sein!
-\printnoidxglossaries
-Siehe \url{https://en.wikibooks.org/wiki/LaTeX/Glossary}.
-
-
 
 
 \end{document}
