@@ -43,6 +43,12 @@ bookmarks=true,%
 	description={Mobiltelefon mit Touchscreen und zusätzlichen Funktionen wie GPS und der Möglichkeit, Apps darauf zu installieren}
 }
 
+\newglossaryentry{Applikation}
+{
+	name=Applikation,
+	description={Als Applikation (kurz App) werden Computerprogramme bezeichnet, die genutzt werden, um eine nützliche oder gewünschte nicht systemtechnische Funktionalität zu bearbeiten oder zu unterstützen}
+}
+
 \title{iMage Lastenheft}
 \author{Simon Himmel, 2210373}
 
@@ -53,52 +59,13 @@ bookmarks=true,%
 %
 % % Hinweise - sollen nicht im endgültigen Dokument erscheinen, daher vor der Abgabe löschen!
 %
-\section{Vorwort}
-Die Dokumentation der Pakete ist häufig lesenswert.
-Insbesondere bei den Paketen hyperref und scrguide (KOMA-Script).
-Wer TeXLivei per Kommandozeile benutzt kann einfach texdoc scrguide aufrufen.
-Windows-Benutzer, die noch nie mit Latex gearbeitet haben, können sich alternativ MikTex anschauen; Mac-Benutzer MacTex.
 
-Zum Erzeugen eines PDFs aus den LATEX-Sourcen empfehlen wir einen Wrapper wie latexmk\footnote{\url{https://www.ctan.org/tex-archive/support/latexmk}} oder einen Editor wie TeXStudio\footnote{\url{http://www.texstudio.org/}} zu verwenden.
-Dieser übernimmt beispielsweise das mehrfache Ausführen von pdflatex, wo es notwendig ist.
-
-Legen Sie für dieses Dokument ein neues Verzeichnis in Ihrem Git an, zum Beispiel \texttt{image.lastenheft} und speichern Sie alle benötigten Dateien darin.
-Speichern Sie keine von Latex generierten Dateien (außer dem PDF) im Git.
-Dies geschieht über die mitgelieferte \texttt{.gitignore}.
-Sie können aber auch Ihre persönliche \texttt{.gitignore} bei Bedarf erweitern.
-
-\section{Technisches Schreiben}
-
-Technisches Schreiben ist wichtig für alle Arten von technischen und wissenschaftlichen Dokumenten, also auch im PSE und in der Bachelorarbeit.
-Es bedeutet vor allem eine präzise Ausdrucksweise und widerspricht dabei einigen Regeln, die man im Deutschunterricht gelernt hat.
-Ein paar praktische Tipps (aus den PSE-Dokumenten von Prof. Snelting):
-\begin{itemize}[nosep]
-\item Vermeide Adjektive.
-      Oft (nicht immer) sind sie unnötig oder ein schlechter Ersatz für einen ungenauen Begriff.
-\item Nebensatzkonstruktionen vermeiden; Hauptsätze verwenden!
-\item Definiere Begriffe klar und verwende keine Synonyme.
-      Synonyme lassen offen, ob genau das gleiche gemeint ist oder nur etwas ähnliches.
-      Definiere spezielle Begriffe, z.B. \gls{Computer}, in einem Glossar und verweise im Dokument entsprechend darauf.
-\item Abkürzungen sollten bei der ersten Verwendung (EV) ausgeschrieben werden.
-      Nach der EV reicht dann die Kurzform.
-\item Versuche konkrete Zahlen und Namen anzugeben.
-      Vermeide ungenaue Ausflüchte wie: meistens, viele, oft, möglichst, üblich, jemand, manche.
-\item Viele kurze Sätze sind einfacher zu verstehen als wenige lange Sätze.
-\item Beispiele machen das Endprodukt greifbarer.
-\item Illustrationen minimalistisch halten (z.B. IKEA Bauanleitung).
-      Eine Information, ein Bild.
-      Lieber mehrere ähnliche Bilder als ein komplexes Bild.
-\item Vermeide Wiederholung, stattdessen Referenzen benutzen.
-      Wiederholungen haben oft subtile Unterschiede, was zu Unklarheit und Verwirrung führt.
-      Bei Änderungen wird oft vergessen, dass Wiederholungen auch angepasst werden müssen.
-\item Versionskontrolle ergibt auch für technische Texte Sinn und nicht nur für Code.
-\end{itemize}
 
 %
 % % Hier beginnt die Gliederung des Lastenhefts
 %
 \section{Zielbestimmung}
-Der Benutzer soll durch das Produkt in die Lage versetzt werden, aus seinen eigenen Aufnahmen, gegen bezahlung, HDR-Bilder zu erstellen.
+Der Benutzer soll durch das Produkt (die \gls{Applikation}) in die Lage versetzt werden, aus seinen eigenen Aufnahmen, gegen bezahlung, HDR-Bilder zu erstellen.
 
 \section{Produkteinsatz}
 Das Produkt dient zur erstellung von HDR-Bildern gegen bezahlung. Außerdem sollen diese auch auf sozialen Netzwerken hochgeladen werden können.
@@ -113,7 +80,7 @@ Plattform: Smartphones mit IOS oder Android Betriebssystem.
 \item[FA20] Erstellen und Speichern eines HDR-Bildes aus einer Bilderreihe der größe 3.
 \item[FA30] Möglichkeit zwischen \gls{Abonnament} und Einzelbild-Preis zu wählen.
 \item[FA40] Übersicht über das Nutzerkonto und zuletzt erstellte \glspl{HDR-Bild}.
-\item[FA50] Alle Bilder sollen dauerhaft auf dem Pear-Corp-Zentralserver zur Analyse der Nutzererfahrung gespeichert werden.
+\item[FA50] Alle Bilder sollen dauerhaft auf dem Zentralserver zur Analyse der Nutzererfahrung gespeichert werden.
 \item[FA60] Möglichkeit die \glspl{HDR-Bild} direkt auf sozialen Netzwerken hochzuladen.
 \item[FA70] Möglichkeit einer Vorschauansicht der bereits auf dem \gls{Smartphone} gespeicherten Bilder.
 \end{itemize}
@@ -122,7 +89,7 @@ Plattform: Smartphones mit IOS oder Android Betriebssystem.
 \begin{itemize}[nosep]
 \item[PD10] Es sind relevante Daten über die \gls{Nutzer} und deren Konto zu speichern.
 \item[PD20] Informationen darüber ob der Nutzer ein Abonnament besitzt.
-\item[PD30] Es sind Eingabe- als auch Ausgabebilder dauerhaft auf dem Pear-Corp-Zentralserver zu speichern.
+\item[PD30] Es sind Eingabe- als auch Ausgabebilder dauerhaft auf dem Zentralserver zu speichern.
 \end{itemize}
 
 \section{Nichtfunktionale Anforderungen}
@@ -135,18 +102,32 @@ Plattform: Smartphones mit IOS oder Android Betriebssystem.
 \section{Systemmodelle}
 
 \subsection{Szenarien}
-
+Der Nutzer möchte ein HDR-Bild auf seienem Smartphone erstellen. Auf der Startseite der Applikation findes sich bereits erstellte HDR-Bilder und eine Schaltfläche um ein neues HDR-Bild zu erzeugen. Dazu kann er, in einer Vorschau, eine Bilderreihe von seinen eigenen Bildern (bestehend aus 3 Elementen) auswählen. Falls der Nutzer ein Abonamment besitzt kann er direkt das HDR-Bild erstellen, welches dann auf seinem Smartphone gespeichert wird. Ansonsten werden ihm Kaufoptionen angezeigt in denen er dieses Abonnament abschließen kann oder weiterhin einen festen Betrag pro erzeugtem Bild zahlt. Außerdem ist es möglich bereits erstellte HDR-Bilder in einer Vorschau anzeigen zu lassen und diese dann direkt in sozialen Netzwerken zu teilen.
 \subsection{Anwendungsfälle}
-\subsubsection{Seminarorganisation}
+\begin{itemize}[nosep]
+\item Nutzer erstellt HDR-Bild über hochladen seiner 3 Bilder auf Pear-Corp-Zentralserver.
+\item Nutzer teilt bereits erzeugte HDR-Bilder in sozialen Netzwerken (z.B Facezine oder Instagrim).
+\item Nutzer kann zwischen Abonnament oder Einzelkaufpreis entschgeiden.
+\item Speicherung der HDR-Bilder
+\end{itemize}
+\subsubsection{iMage Model}
 \begin{center}
-\includegraphics[width=0.8\textwidth]{szenario_seminarorganisation.pdf}
+\includegraphics[width=0.8\textwidth]{iMageModel.png}
 \end{center}
 
-Akteure: Kundensachbearbeiter, Seminarsachbearbeiter.
+Akteure: Nutzer, Administrator (Admin).
 
-Anwendungsfälle: Kundenverwaltung, Rechnungsstellung, Anfragebearbeitung, Dozentenverwaltung, Listenverwaltung, Seminarverwaltung.
+Anwendungsfälle: HDR-Bild Erzeugung, teilen von HDR-Bilder auf sozialen Netzwerken, Speicherung und Analyse der HDR-Bilder/Daten, 
 
-Textuelle Beschreibung: (folgt)
+Textuelle Beschreibung: 
+
+Dem Nutzer ist es möglich über die iMage Applikation seine bereits erstellten HDR-Bilder zu verwalten und mit anderen Leuten im Netz zu teilen. Außerdem kann dieser neue HDR-Bilder erzeugen, welche über den Server erstellt und auch dort gespeichert werden. Dem Administrator ist es nun möglich über iMage auf die Nutzerdaten und über den Server auf alle gespeicherten HDR- und Nicht-HDR-Bilder zuzugreifen und diese zu analysieren.
+
+%
+% % Automatisch generiertes Glossar (Latex zwei mal ausführen um Glossar anzuzeigen)
+%
+%\glsaddall % das sorgt dafür, dass alles Glossareinträge gedruckt werden, nicht nur die verwendeten. Das sollte nicht nötig sein!
+\printnoidxglossaries
 
 
 \end{document}
